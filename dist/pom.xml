@@ -64,37 +64,7 @@
             <artifactId>realisticvillagers-core</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
-        <!-- v1_18 -->
-        <dependency>
-            <groupId>me.matsubara</groupId>
-            <artifactId>realisticvillagers-v1_18</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <!-- v1_19 -->
-        <dependency>
-            <groupId>me.matsubara</groupId>
-            <artifactId>realisticvillagers-v1_19</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <!-- v1_20_6 -->
-        <dependency>
-            <groupId>me.matsubara</groupId>
-            <artifactId>realisticvillagers-v1_20_6</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <!-- v1_21_8 -->
-        <dependency>
-            <groupId>me.matsubara</groupId>
-            <artifactId>realisticvillagers-v1_21_8</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <!-- v1_21_10 -->
-        <dependency>
-            <groupId>me.matsubara</groupId>
-            <artifactId>realisticvillagers-v1_21_10</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <!-- v1_21_11 -->
+        <!-- DrakesCraft ships exclusively on 1.21.11. Avoid bundling stale NMS adapters. -->
         <dependency>
             <groupId>me.matsubara</groupId>
             <artifactId>realisticvillagers-v1_21_11</artifactId>
