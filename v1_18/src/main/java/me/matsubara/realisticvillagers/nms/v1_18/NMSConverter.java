@@ -319,6 +319,10 @@ public class NMSConverter implements INMSConverter {
         if (worlds == null) return;
 
         for (File world : worlds) {
+            // Only scan the worlds where the plugin is actually enabled: reading every ".mca" of
+            // every world blocks the main thread for a long time on servers with many worlds.
+            if (!plugin.isEnabledIn(world.getName())) continue;
+
             File entitiesFolder = new File(world, "entities");
 
             File[] entitiesFiles = entitiesFolder.listFiles(DATA_FILE_FILTER);
