@@ -94,6 +94,14 @@ public class PetWolf extends Wolf implements Pet {
     public void load(ValueInput input) {
         super.load(input);
 
+        // EntityLookup rejects an entity while loading when an already-loaded entity owns its
+        // persisted UUID. Keep the existing entity authoritative and give only this incoming
+        // pet a fresh identity, so the chunk can finish loading without dropping either entity.
+        if (level() instanceof ServerLevel server && server.getEntity(getUUID()) != null) {
+            setUUID(UUID.randomUUID());
+            plugin.getLogger().warning("Regenerated a duplicate UUID while loading a villager pet.");
+        }
+
         // We use load() instead of readAdditionalSaveData() because CraftEntity#readBukkitValues is called AFTER readAdditionalSaveData(),
         // so our data won't be present at that time.
 
